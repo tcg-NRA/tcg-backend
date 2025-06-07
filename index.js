@@ -1,12 +1,14 @@
 // index.js
 const express = require('express');
-const cors = require('cors'); // ← Add this
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// Load card data
+const cards = require('./data/cards');
+
 // ─── CORS Middleware ────────────────────────────────────────────
-// Allow requests only from your frontend (Netlify)
 app.use(cors({
   origin: 'https://tcg-frontend.netlify.app'
 }));
@@ -14,6 +16,11 @@ app.use(cors({
 // ─── Health Check Route ─────────────────────────────────────────
 app.get('/health', (req, res) => {
   res.send('OK');
+});
+
+// ─── API: Get all cards ─────────────────────────────────────────
+app.get('/api/cards', (req, res) => {
+  res.json(cards);
 });
 
 // ─── Start Server ───────────────────────────────────────────────
