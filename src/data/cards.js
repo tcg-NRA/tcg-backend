@@ -15,6 +15,8 @@ async function fetchCards() {
       .max_results(100)
       .execute();
 
+    console.log("✅ Cloudinary search result:", result); // ADD THIS
+
     const cards = result.resources.map((img) => ({
       _id: img.public_id,
       name: img.public_id,
@@ -23,9 +25,10 @@ async function fetchCards() {
 
     return cards;
   } catch (err) {
-    console.error('🔴 Error fetching Cloudinary cards:', err);
+    console.error('🔴 Error fetching Cloudinary cards:', err); // Already exists
     return [];
   }
 }
+
 
 module.exports = fetchCards;
