@@ -6,7 +6,7 @@ cloudinary.config({
   api_key: '528683194961272',
   api_secret: '8bjqyK9gkpBDgJleY6I5Gvz5xzM'
 });
-dkbr3jpmr
+
 async function fetchCards() {
   try {
     const result = await cloudinary.search
