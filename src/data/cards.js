@@ -2,11 +2,11 @@
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
-  cloud_name: 'YOUR_CLOUD_NAME',
-  api_key: 'YOUR_API_KEY',
-  api_secret: 'YOUR_API_SECRET'
+  cloud_name: 'dkbr3jpmr',
+  api_key: '528683194961272',
+  api_secret: '8bjqyK9gkpBDgJleY6I5Gvz5xzM'
 });
-
+dkbr3jpmr
 async function fetchCards() {
   try {
     const result = await cloudinary.search
