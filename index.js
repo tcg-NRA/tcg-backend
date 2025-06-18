@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const fetchCards = require('./data/cards'); // Live-fetching from Cloudinary
+const fetchCards = require('.src/data/cards'); // Live-fetching from Cloudinary
 
 const app = express();
 const port = process.env.PORT || 5000;
